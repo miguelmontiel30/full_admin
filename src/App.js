@@ -1,26 +1,28 @@
-import { Switch } from 'react-router-dom';
-import Main from './components/Main';
+import { ProviderNavbar } from './contexts/contextNavbar'
+import SideNav from './components/SideNav';
 import Navbar from './components/Navbar'
-import '@fortawesome/fontawesome-free/css/all.css';
-import 'bootstrap-css-only/css/bootstrap.css';
-import 'mdbreact/dist/css/mdb.css';
+import { Switch } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
 
 function App() {
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
 
-      {/* <main> */}
-      <main style={{ paddingTop: '4.9rem' }}>
+      <div className="white-skin">
+      {/* <div className="navy-blue-skin dark-bg-admin"> */}
+
+        <ProviderNavbar>
+          <SideNav />
+          <Navbar />
+        </ProviderNavbar>
 
         <Switch>
-          <Main path='/' />
-          {/* </main> */}
+          <Dashboard path='/' />
         </Switch>
-      </main>
+
+      </div>
+
     </>
   );
 }
