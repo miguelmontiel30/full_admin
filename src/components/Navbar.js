@@ -1,17 +1,32 @@
-import { MDBBtn, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBIcon, MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink } from 'mdbreact'
-import React, { useState, useContext } from 'react'
+import {
+    MDBBtn,
+    MDBDropdown,
+    MDBDropdownItem,
+    MDBDropdownMenu,
+    MDBDropdownToggle,
+    MDBIcon,
+    MDBNavbar,
+    MDBNavbarNav,
+    MDBNavItem,
+    MDBNavLink
+} from 'mdbreact'
+import React, { useContext } from 'react'
+import { ContextoTema } from '../contexts/contextTema';
 import { ContextoNavbar } from './../contexts/contextNavbar'
 
 const Navbar = () => {
 
-    //UTILIZAMOS LOS CONTEXTOS PARA LAS FUNCIONES Y ESTILOS DE LA NAVBAR
-    const { navStyle } = useContext(ContextoNavbar);
+    //UTILIZAMOS LOS CONTEXTOS PARA LAS FUNCIONES Y ESTILOS DE LA NAVBAR    
     const { handleToggleClickA } = useContext(ContextoNavbar);
     const { specialCaseNavbarStyles } = useContext(ContextoNavbar);
 
+    //MODO OSCURO
+    const { styles__button_toggleDM } = useContext(ContextoTema);
+    const { toggleDarkMode } = useContext(ContextoTema);
+
     return (
 
-        <MDBNavbar style={navStyle} double expand="md" fixed="top" scrolling>
+        <MDBNavbar double expand="md" fixed="top" scrolling>
 
             <MDBNavbarNav left>
 
@@ -29,7 +44,7 @@ const Navbar = () => {
                     </div>
                 </MDBNavItem>
 
-                <MDBNavItem c
+                <MDBNavItem
                     className="d-none d-md-inline text-uppercase font-weight-bold"
                     style={{ paddingTop: 5 }}>
                     Full Admin
@@ -65,13 +80,14 @@ const Navbar = () => {
                 </MDBNavItem>
 
                 <MDBNavItem>
-                    <MDBBtn outline color="dark" size="sm">
-                        Modo Oscuro
-                        <MDBIcon icon="moon" className="ml-1" />
+                    <MDBBtn onClick={toggleDarkMode} outline color={styles__button_toggleDM.btn_togleDM} size="sm">
+                        {styles__button_toggleDM.btn_text_togleDM}
+                        <MDBIcon icon={styles__button_toggleDM.btn_icon_togleDM} className="ml-1" />
                     </MDBBtn>
                 </MDBNavItem>
 
             </MDBNavbarNav>
+
         </MDBNavbar>
     );
 }

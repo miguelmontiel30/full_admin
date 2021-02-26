@@ -4,14 +4,17 @@ import {
     MDBCard, MDBCardBody,
     MDBCol, MDBIcon
 } from 'mdbreact';
+import { ContextoTema } from '../contexts/contextTema';
 
 const Dashboard = () => {
+
+    const { styles__cards } = useContext(ContextoTema);
 
     return (
         <main style={{ paddingTop: "5.5rem" }}>
             <MDBContainer fluid style={{ minHeight: '100vh' }} className="mt-5">
                 <MDBCol xl='3' md='6' className='mb-5'>
-                    <MDBCard cascade className='cascading-admin-card'>
+                    <MDBCard cascade className={'cascading-admin-card ' + styles__cards.card_background}>
                         <div className='admin-up'>
                             <MDBIcon
                                 far
