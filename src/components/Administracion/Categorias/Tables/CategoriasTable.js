@@ -5,7 +5,10 @@ import Swal from 'sweetalert2';
 import { ContextoTema } from '../../../../contexts/Theming/contextTema';
 import data_categorias from '../../../../data/DataCategorias'
 
-const CategoriasTable = ({toggleModal}) => {
+//DATA BASE CONECTION
+import data_base from './../../../../database/firebase'
+
+const CategoriasTable = ({ toggleModal }) => {
 
     //ESTADOS DE LA TABLA QUE PERMITEN BUSCAR Y SETEAR LA DATA DE LA TABLA
     const [busqueda, setbusqueda] = useState('');
@@ -57,6 +60,21 @@ const CategoriasTable = ({toggleModal}) => {
 
     //USAMOS PARA CARGAR LA DATA UNA VEZ QUE HAYA CARGADO POR PRIMERA VEZ LA INTERFAZ
     useEffect(() => {
+
+        // console.log(
+        data_base.collection('categorias').onSnapshot((snapshot) => {
+            console.log(snapshot.docs);
+        })
+        // .then(() => {            
+        //     // console.log(snapshot.docs);
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // })
+        // );
+        // data_base.collection('categorias').onSnapShot((snapshot) => {
+        //     console.log(snapshot);
+        // });
 
         //SI NO EXISTEN DATOS DE BUSUQEDA ENTONCES CARGAMOS TODA LA DATA
         if (busqueda == '') {

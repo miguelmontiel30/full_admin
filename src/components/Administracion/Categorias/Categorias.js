@@ -10,6 +10,8 @@ import { ContextoTema } from '../../../contexts/Theming/contextTema';
 import CategoriasTable from './Tables/CategoriasTable';
 import ModalCategorias from './Modals/ModalCategorias'
 
+
+
 const Categorias = () => {
 
     const [modalCategoria, setModalCategoria] = useState(true);
