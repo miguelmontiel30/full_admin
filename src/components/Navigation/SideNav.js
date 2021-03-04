@@ -6,7 +6,7 @@ import {
     MDBSideNavNav,
     MDBSideNav
 } from "mdbreact";
-import { ContextoNavbar } from "../contexts/contextNavbar";
+import { ContextoNavbar } from "../../contexts/Navigation/contextNavbar";
 import {Link} from 'react-router-dom'
 
 const SideNav = () => {

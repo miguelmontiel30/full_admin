@@ -4,7 +4,7 @@ import {
     MDBCard, MDBCardBody,
     MDBCol, MDBIcon
 } from 'mdbreact';
-import { ContextoTema } from '../contexts/contextTema';
+import { ContextoTema } from '../../contexts/Theming/contextTema';
 
 const Dashboard = () => {
 

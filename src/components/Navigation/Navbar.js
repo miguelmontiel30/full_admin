@@ -11,8 +11,8 @@ import {
     MDBNavLink
 } from 'mdbreact'
 import React, { useContext } from 'react'
-import { ContextoTema } from '../contexts/contextTema';
-import { ContextoNavbar } from './../contexts/contextNavbar'
+import { ContextoTema } from '../../contexts/Theming/contextTema';
+import { ContextoNavbar } from '../../contexts/Navigation/contextNavbar'
 
 const Navbar = () => {
 

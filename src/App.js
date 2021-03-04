@@ -1,11 +1,11 @@
-import { ProviderNavbar } from './contexts/contextNavbar'
-import { ContextoTema } from './contexts/contextTema'
-import SideNav from './components/SideNav';
-import Navbar from './components/Navbar'
+import { ProviderNavbar } from './contexts/Navigation/contextNavbar'
+import { ContextoTema } from './contexts/Theming/contextTema'
+import SideNav from './components/Navigation/SideNav';
+import Navbar from './components/Navigation/Navbar'
 import { Switch } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import { useContext } from 'react';
-import Categorias from './components/Categorias';
+import Categorias from './components/Administracion/Categorias/Categorias';
 
 function App() {
 
